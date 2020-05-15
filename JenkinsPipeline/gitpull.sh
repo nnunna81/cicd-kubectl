@@ -1,6 +1,6 @@
 
-cd /opt
-sudo git clone https://github.com/nnunna81/cicd-kubectl.git 
+cd /Users/nnunna/
+git clone https://github.com/nnunna81/cicd-kubectl.git 
 RC=$?
 if [[ $RC == 0 ]];then
 	echo "Repo cloned"
