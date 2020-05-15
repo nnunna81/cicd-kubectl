@@ -20,7 +20,7 @@ stage('Docker build'){
 }
 
 stage('Docker push'){
-	if(BUILD_TYPE == "BUILD"){
+	if(BUILD_TYPE == "PUSH"){
 			sh "echo 'docker push'"
 		sh "/opt/sample-website/JenkinsPipeline/dockerpush.sh $IMAGE_NAME $VERSION"
 	}
