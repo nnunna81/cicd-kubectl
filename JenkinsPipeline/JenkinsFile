@@ -5,10 +5,8 @@ def VERSION=env.VERSION
 def BUILD_TYPE=env.BUILD_TYPE
 
 	stage('Git pull'){
-	sh "cd /Users/nnunna/"
-	sh "git clone https://github.com/nnunna81/cicd-kubectl.git" 
 	sh "echo 'Git pulled/cloned'"
-	
+	sh "/opt/sample-website/JenkinsPipeline/gitpull.sh"
 }
 
 stage('Docker build'){
