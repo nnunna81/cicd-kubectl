@@ -6,7 +6,7 @@ def BUILD_TYPE=env.BUILD_TYPE
 
 	stage('Git pull'){
 	sh "echo 'Git pulled/cloned'"
-	sh "/opt/sample-website/JenkinsPipeline/gitpull.sh"
+	sh "/Users/nnunna/cicd-kubectl/JenkinsPipeline/gitpull.sh"
 }
 
 stage('Docker build'){
