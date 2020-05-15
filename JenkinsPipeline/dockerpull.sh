@@ -1,5 +1,5 @@
 imagename=$1
 version=$2
 
-docker pull avinashkolla/$imagename:$version
+docker pull nnunna/$imagename:$version
 
