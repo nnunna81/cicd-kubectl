@@ -1,5 +1,9 @@
-pipeline {
-	agent any 
+node('master'){
+
+def IMAGE_NAME=env.IMAGE_NAME
+def VERSION=env.VERSION
+def BUILD_TYPE=env.BUILD_TYPE
+
 	stage('Git pull'){
 	sh "echo 'Git pulled/cloned'"
 	sh "/opt/sample-website/JenkinsPipeline/gitpull.sh"
@@ -17,7 +21,7 @@ stage('Docker build'){
 
 stage('Docker push'){
 	if(BUILD_TYPE == "BUILD"){
-        	sh "echo 'docker push'"
+			sh "echo 'docker push'"
 		sh "/opt/sample-website/JenkinsPipeline/dockerpush.sh $IMAGE_NAME $VERSION"
 	}
 }
@@ -29,7 +33,7 @@ stage('Docker run'){
 		sh "/opt/sample-website/JenkinsPipeline/dockerpull.sh $IMAGE_NAME $VERSION"
 	}
 
-        sh "echo 'docker run'"
+		sh "echo 'docker run'"
 	sh "/opt/sample-website/JenkinsPipeline/dockerrun.sh $IMAGE_NAME $VERSION"
 
 }
