@@ -1,5 +1,5 @@
 
 imagename=$1
-docker build -t $imagename /opt/sample-website/
+/usr/local/bin/docker build -t $imagename /opt/sample-website/
 
-docker tag $imagename nnunna/$imagename:$version
+/usr/local/bin/docker tag $imagename nnunna/$imagename:$version

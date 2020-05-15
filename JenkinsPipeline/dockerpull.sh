@@ -1,5 +1,5 @@
 imagename=$1
 version=$2
 
-docker pull nnunna/$imagename:$version
+/usr/local/bin/docker pull nnunna/$imagename:$version
 
